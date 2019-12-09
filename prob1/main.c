@@ -11,10 +11,74 @@
 
 void main()
 {
+	int size;
+	printf("how many numbers\n");
+	scanf("%d", &size);
 
-
-
+	int inputs[size];
+	printf("enter inputs: \n");
+	for (int i = 0; i < size; ++i)
+	{
+		scanf("%d\n", &inputs[i]);
+	}
 	
+
+	int bytes[8];
+	char outputs[256];
+	for (int i = 0 ; i < size; i ++){
+		bytes[0]= inputs[i]/128;
+		if (bytes[0]>0)
+		{
+			bytes[0] = 1;
+			inputs[i]- 127;
+		}else bytes[0]=0;
+		bytes[1]= inputs[i]/64;
+		if (bytes[1]>0)
+		{
+			bytes[1] = 1;
+			inputs[i]- 63;
+		}else bytes[1]=0;
+		bytes[2]= inputs[i]/32;
+		if (bytes[2]>0)
+		{
+			bytes[2] = 1;
+			inputs[i]- 31;
+		}else bytes[2]=0;
+		bytes[3]= inputs[i]/16;
+		if (bytes[3]>0)
+		{
+			bytes[3] = 1;
+			inputs[i]- 15;
+		}else bytes[3]=0;
+		bytes[4]= inputs[i]/8;
+		if (bytes[4]>0)
+		{
+			bytes[4] = 1;
+			inputs[i]- 7;
+		}else bytes[4]=0;
+		bytes[5]= inputs[i]/4;
+		if (bytes[5]>0)
+		{
+			bytes[5] = 1;
+			inputs[i]- 3;
+		}else bytes[5]=0;
+		bytes[6]= inputs[i]/2;
+		if (bytes[6]>0)
+		{
+			bytes[6] = 1;
+			inputs[i]- 1;
+		}else bytes[6]=0;
+		bytes[7]= inputs[i]/1;
+		if (bytes[7]>0)
+		{
+			bytes[7] = 1;
+		}
+		else bytes[7]=0;
+		for(int i = 0; i < 8; i ++){
+			printf("%d",bytes[i]);
+		}
+		printf(" ");
+	}
 }
 
 
