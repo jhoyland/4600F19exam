@@ -1,0 +1,82 @@
+Physics 4600 Fall 2019
+======================
+
+Final exam
+==========
+
+There are 3 problems to work on in this exam. Questions 1 and 2 are worth 8 marks each. 
+
+Instructions to set up:
+-----------------------
+
+Using MSYS on your computer clone this repository:
+
+	git clone https://github.com/jhoyland/4600F19exam.git
+
+As soon as it is cloned create a newbranch:
+
+	git checkout -b yourname
+
+Where yourname is your name in a recognizable form (no spaces!)
+
+You may now edit the code in the directories prob1 , prob2 and prob3
+Each is just a single source file with no headers so you should be able to compile with just:
+
+	gcc main.c
+
+When you are finished a problem: 
+
+Add all your changes and commit
+
+	git add --all
+
+	git commit -m "Finished problem"
+
+When you are finished the exam:
+
+Add all your changes and commit
+
+	git add --all
+
+	git commit -m "Finished exam"
+
+The push your branch:
+
+	git push origin yourname
+
+where yourname is the branch name you created at the beginning.
+
+*** All exams must be pushed back to github by 11:30 on 9th December ***
+
+
+THE PROBLEMS:
+=============
+
+
+1) A program to produce the print out the binary representation of any integer. [8 MARKS]
+
+	The user should be able to enter an integer in decimal form. The program will then print the binary representation of the number.
+	The binary representation should be in groups of 8-bits with a space between. E.g. 01001101 01100101
+
+2) A program to calculate the roots of a quadratic equation. [8 MARKS]
+
+	This program reads in 3 numbers as the coefficients of a quadratic equation. The coefficients should be entered as command line arguments.
+	It should print out the roots with appropreate text. It should be able to cope with complex as well as real roots. 
+	Complex roots must be printed in the form x + iy or x - iy depending on the sign of the imaginary part.
+
+3) histogram data  [12 MARKS]
+
+	The data provided contains a large number of random numbers. Your program should read the data and count the data within each of 16 'bins'.  
+	That is the frequency of data lying between 0 - 16  ,  17 - 32,  33 - 48  etc. The result should be outputted to a file containing 3 columns representing
+	the bin start and end and the frequency.
+	Finally the program should display the data as a bar graph like so:
+
+	0-16	=======
+	17-32	===========
+	33-48	=============
+
+	 ...
+
+	etc
+
+	
