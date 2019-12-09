@@ -11,16 +11,38 @@
 */
 
 
-int main(int argc, char** argc)
+int main(int argc, char** argv)
 {
-	/* Read in coefficients */
+	
+
+	double a, b, c, root, real, imag, yupP, yupN, imagroot; //variables 
+	printf("enter variables for a, b, and c: ");	
+	scanf("%lf %lf %lf", &a, &b, &c);	//scans for inputs of abc and holds them
+
+	real = b * b	;	//real part 
+	imag = 4 * a * c;	//imaginary part 
 
 
-	/* Find roots */ 
+	if (real > imag)			//if the root is real
+	{	
+        root = sqrt(real - imag) ;
+        yupP = (-b+root)/(2*a);
+        yupN = (-b-root)/(2*a);
+
+        printf("positive = %.2lf\nnegative = %.2lf\n", yupP, yupN);
+    }
 
 
 
-	/* Print out roots */
+    if (imag > real)			//imaginary 
+    {
+        imagroot = sqrt(-imag); 		//-imag due to not being able to do a (-number)^0.5
+        
+        printf("%.2lf - %.2lfi", real, root);
+    }
+
+    return 0;
+
 }
 
 

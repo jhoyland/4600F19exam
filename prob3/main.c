@@ -23,8 +23,34 @@
 
 
 
-void main()
+void main(int argc, char** argv)
 {
+
+float a;
+int count=0;
+
+FILE *input_file;						//opens file
+input_file = fopen(argv[1],"r");		
+
+
+
+if(input_file != NULL)		//works if open
+{
+	while(fscanf(input_file,"%f",&a) != EOF)		//counts how much memory needed
+	{
+			count++;
+	}
+	double data[count];
+
+	rewind(input_file);				
+	for(int i=0;i<count;i++)
+	{
+		if(fscanf(input_file,"%lf",&data[i]) == EOF) //scans all the data in the data.dat 
+		{
+			break;
+		}
+	}
+fclose(input_file);
 
 
 
