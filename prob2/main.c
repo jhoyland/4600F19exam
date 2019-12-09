@@ -28,7 +28,15 @@ int main()
 	}
 
 	/* Find roots */ 
-	
+
+
+	/* My problem is that (b*b - 4*a*c) is not returning the right number
+	 * For some reason it's saying it's 1 or something 
+	 * So it's always saying it's real roots and then returning the wrong roots 
+	 * Lord help me
+	 */
+
+
 	if ((b*b - 4*a*c) < 0)	// complex case
 	{	
 		printf("Complex roots\n");
