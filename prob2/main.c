@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	int a,b,c;
 	printf("program start:\n");
 	/* Read in coefficients */
-	if(argc > 1)
+	if(argc > 1)  // scan for input
 	{
 		sscanf(argv[1],"%d",&a);
 		sscanf(argv[2],"%d",&b);
@@ -25,14 +25,14 @@ int main(int argc, char** argv)
 	/* Find roots */ 
 	float s2 = 4*a*c;
 	float s1 = pow(b,2);
-	if (s1<s2)
+	if (s1<s2) // complex case
 	{
 		float x = (-1*b)/(2*a);
 		float y = sqrt((-1*(s1-s2)));
 
 		printf("%f+i%f \n%f-i%f",x,y,x,y);
 	}
-	else
+	else // regular case
 	{
 		float roots1 = (-b + sqrt(s1 - s2)/(2*a));
 		float roots2 = (-b - sqrt(s1-s2)/(2*a));
