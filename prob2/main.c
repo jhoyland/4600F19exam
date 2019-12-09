@@ -10,17 +10,37 @@
 	Complex roots must be printed in the form x + iy or x - iy depending on the sign of the imaginary part.
 */
 
-
-int main(int argc, char** argc)
+float main() 
 {
-	/* Read in coefficients */
+    double a, b, c, numerator, root1, root2, real, imaginary;
+    printf("Enter Coefficients a, b and c: \n");
+    fflush(stdout);
+    
+    /* Read in coefficients */
+    scanf("%lf %lf %lf", &a, &b, &c);
+    
+    numerator = b * b - 4 * a * c;
+    /* Find roots */ 
+    /* Print out roots */
+    if (numerator > 0) //real roots
+    {
+        root1 = (-b + sqrt(numerator)) / (2 * a);
+        root2 = (-b - sqrt(numerator)) / (2 * a);
+        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
+    }
+    
+    else if (numerator == 0) //equal roots
+    {
+        root1 = root2 = -b / (2 * a);
+        printf("root1 = root2 = %.2lf;", root1);
+    }
+    
+    else //imaginary roots
+    {
+        real = -b / (2 * a);
+        imaginary = sqrt(-numerator) / (2 * a);
 
-
-	/* Find roots */ 
-
-
-
-	/* Print out roots */
-}
-
-
+        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", real, imaginary, real, imaginary);
+    }
+    
+} 
