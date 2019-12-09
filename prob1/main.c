@@ -26,7 +26,7 @@ void main()
 	//assume it is 16
 	//printf("made it here 1");
 	//fflush(stdout);
-	int currentval = input;
+	//int currentval = input;
 	int exponent = 1; //special case for 2^0
 	int output[15]; //just assuming highest entry is 16 bit number, fix later??
 
@@ -35,18 +35,23 @@ void main()
 		output[0] = 0; //if it's an even number the LSB is 0;
 		}
 	else output[0] = 1;
-	while(exponent < 16)
+
+	while(exponent <= 15) //iterate from 1-15
 	{	
 
 		//printf("made it here 2");
 		//fflush(stdout);
 		//for the rest of the bits
-		if ((input % (int)pow(2,exponent)) == 1) 
+		if(input < (int)pow(2,exponent)) //if the input is smaller than the current index
 		{
-		output[exponent] = 0; //if the remainder of the input divided by 2^exponent = 1, the index is 0
+			output[exponent] = 0;
+		}
+		else if ((input % (int)pow(2,exponent)) != 0) //if it does not divide into this element evenly
+		{
+		output[exponent] = 0; //if the remainder of the input divided by 2^exponent = 0, the index is 0. Example 8 % 2^2
 		}
 		//example: 15 % 2^0
-		else output[exponent] = 1;
+		else if(input % (int)pow(2,exponent) == 0) output[exponent] = 1;
 		//printf("made it here 3");
 		//fflush(stdout);
 		exponent++;
