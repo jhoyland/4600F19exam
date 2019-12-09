@@ -11,16 +11,34 @@
 */
 
 
-int main(int argc, char** argc)
+int main(int argc, char** argv)
 {
 	/* Read in coefficients */
+	float a,b,c;
+	argv[3] = ("%f,%f,%f");
+	sprintf(argv[3],"%f,%f,%f",a,b,c);
+	float root1;
+	float root2;
+	float checkreal = b*b-4*a*c;
+	if (checkreal>0)
+	{
+		root1 = -b+sqrt(checkreal)/2/a;
+		root2 = -b-sqrt(checkreal)/2/a;
+		printf("root1 = %f\nroot2 = %f\n",root1,root2);
+	}
+	if (checkreal < 0)
+	{
+		float imag = abs(b*b-4*a*c)/2/a;
+		float real = -b/2/a;
+		printf("root1 = %f +%fi\nroot2 = %f -%fi\n",real,imag,real,imag);
+	}
+	if(checkreal = 0)
+	{
+		float root = -b/2/a;
+		printf("root is %f",root);
+	}
+	return 0;
 
-
-	/* Find roots */ 
-
-
-
-	/* Print out roots */
 }
 
 

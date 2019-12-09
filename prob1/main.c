@@ -11,10 +11,45 @@
 
 void main()
 {
+	float input;
+	printf("Enter\n");
+	scanf("%f",&input);
+	int int_input = (int)input;
+	int int_binary = 0;
+	if(int_input > 256)
+	{
+		int_binary = int_binary + 10000000;
+	}
+	if(int_input%256 >128)
+	{
+		int_binary =int_binary + 1000000;
+	}
+	if((int_input%256-128)>64)
+	{
+		int_binary = int_binary + 100000;
+	}
+	if((int_input%256-128-64)>32)
+	{
+		int_binary = int_binary + 10000;
+	}
+	if((int_input%256-128-64-32)>16)
+	{
+		int_binary = int_binary + 1000;
+	}
+	if((int_input%256-128-64-32-16)>8)
+	{
+		int_binary += 100;
+	}
+	if((int_input%256-128-64-32-16-8)>4)
+	{
+		int_binary +=10;
+	}
+	if((int_input%256-128-64-32-16-8-4)>2)
+	{
+		int_binary += 1;
+	}
+	printf("%f ",int_binary);
 
-
-
-	
 }
 
 
