@@ -80,7 +80,7 @@ void main(int argc,char **argv)
 			{
 				printf("-");
 			}
-			printf("\n");
+			printf("\n"); // move to next line
 			
 			count=0; // reset the counter
 		}
