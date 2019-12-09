@@ -27,6 +27,56 @@ void main()
 {
 
 
+	//open a file and declare it a "r" to decalre reading only
+	FILE* final_input;
+	final_input =fopen("data.dat","r");
+
+
+	
+	// this it to check if the fill is opened or not
+
+	if(final_input == NULL) 
+ 	{
+ 		printf("File didn't open");
+ 		
+ 	}
+
+
+ 	float data[100];
+ 	int length_data= sizeof(data)/sizeof(data[0]);
+ 	
+
+ 	int n=0;
+ 	
+ 	//
+ 	do
+ 		for(n=0;n<length_data;n++)
+ 		{
+ 			fscanf(final_input,"\n%f ",&data[n]);
+  		}
+ 	while(data!=NULL);
+
+
+ 	int bin1[],bin2[],bin3[]; //define the bins 
+
+
+ 	for(n=0;n<length_data;n++)
+ 	{
+ 			
+ 			if(data[n]>=0 & data[n] <17)
+ 			{
+ 				data[n]=bin1;
+ 			}
+ 			else
+ 			{
+ 				
+ 			}
+
+ 	}
+
+
+ 	
+
 
 
 }
