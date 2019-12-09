@@ -11,16 +11,44 @@
 */
 
 
-int main(int argc, char** argc)
+int main(int argc, char** argv)
 {
+    double a, b, c, real, real2, imag;
 	/* Read in coefficients */
-
-
-	/* Find roots */ 
-
-
+    if( argc == 4 )
+    {
+        a = atof(argv[1]);
+        b = atof(argv[2]);
+        c = atof(argv[3]);
+    }
+    else 
+    {
+        printf("Invalid number of arguements! 3 input arguements needed: a,b,c where ax^2+bx+c=0.\n");
+        return 1;
+    }
+	/* Find roots */
+    if (pow(b,2)-4*a*c < 0)
+    {
+        real = -b/(2*a);
+        real2 = real;
+        imag = pow(-1*(pow(b,2)-4*a*c),0.5)/(2*a);
+    }
+    else if (pow(b,2)-4*a*c == 0)
+    {
+        real = -b/(2*a);
+        real2 = real;
+        imag = 0;
+    }
+    else
+    {
+        real = -b/(2*a)+pow((pow(b,2)-4*a*c),0.5)/(2*a);
+        real2 = -b/(2*a)-pow((pow(b,2)-4*a*c),0.5)/(2*a);
+        imag = 0;
+    }
 
 	/* Print out roots */
+    printf("For roots are:\n\t%f + i%f\n\t%f - i%f\n",real,imag,real2,imag);
+    return 0;
 }
 
 
