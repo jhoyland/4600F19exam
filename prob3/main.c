@@ -27,12 +27,10 @@ void main(int argc,char **argv)
 {
 	int i=0,a,b,n,c;
 	float x;
-	int bin1,bin2,bin3,bin4,bin5,bin6,bin7,bin8,bin9,bin10,bin11,bin12,bin13,bin14,bin15,bin16;
 	
 	int bin_size = 16;
 	int bits =8;
 	int bin = pow(2,bits)/bin_size;
-	int bins[bin+1];
 	int count;
 
 	FILE * input_file;
@@ -84,6 +82,12 @@ void main(int argc,char **argv)
 			
 			count=0; // reset the counter
 		}
+	}
+	else
+	{
+
+		printf("\nError: Could not open file %s",argv[1]);
+
 	}
 	
 		return ;
