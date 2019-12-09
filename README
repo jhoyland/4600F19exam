@@ -48,6 +48,15 @@ where yourname is the branch name you created at the beginning.
 
 *** All exams must be pushed back to github by 11:30 on 9th December ***
 
+Marks are given for 
+* correctly fulfilling the brief of the problem
+* clear, readable code
+* good commenting
+* efficient code
+* robust solution (works even for unexpected input and "fails gracefully" when errors occur)
+
+All programs must be written in C no other libraries may be linked.
+
 
 THE PROBLEMS:
 =============
