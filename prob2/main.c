@@ -52,7 +52,7 @@ int main(int argc, char** argv)
 
 	/* Find the square root of the discriminant */
 
-	double sqrt_term = fabs(discriminant) / (2.0 * a);
+	double sqrt_term = sqrt(fabs(discriminant)) / (2.0 * a);
 
 	/* set real parts to -b/2a, if discriminant is zero this will be 
 	only solution. Set imaginary parts to zero*/
